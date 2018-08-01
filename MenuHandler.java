@@ -1,6 +1,5 @@
 package myCAD;
 
-import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -50,8 +49,7 @@ public class MenuHandler implements ActionListener{
 		else if("打开".equals(command)){			
 			int value=JOptionPane.showConfirmDialog(null, "是否需要保存当前文件？", "提示信息", 0);
 			if(value==0){				
-				saveFile();
-				
+				saveFile();			
 			}
 			if(value==1){
 				//清空容器里面的东西
@@ -90,6 +88,9 @@ public class MenuHandler implements ActionListener{
 		else if("保存".equals(command)){			
 			saveFile();						
 		}	
+		else if("查看帮助".equals(command)){	
+			JOptionPane.showMessageDialog(null, "拖动可以画图；选中粗细，点击空白处弹出设置；\n选中文字按钮再点击要安置的位置，然后在对话框输入文本");
+		}
 	}
 	
 	public void saveFile(){

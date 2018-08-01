@@ -8,7 +8,7 @@ import javax.swing.JButton;
  
 //按钮监听类，实现ActionListenerde接口
 public class ButtonHandler implements ActionListener{		
-	public DrawBorder db;
+	private DrawBorder db;
  
 	//构造函数
 	public ButtonHandler(DrawBorder db1) {

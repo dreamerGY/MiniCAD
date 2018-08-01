@@ -9,9 +9,6 @@ public class Rect extends Shape implements Serializable{
 	
 	private static final long serialVersionUID = -1830428811835486561L;
 
-	public Rect(){
-		
-	}
 	//矩形的构造方法
 	public Rect(int x1,int y1,int x2,int y2,Color color,int width){
 		this.x1=x1;

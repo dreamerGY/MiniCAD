@@ -74,7 +74,6 @@ public class DrawHandler implements MouseListener,MouseMotionListener{
         	String input;
         	input = JOptionPane.showInputDialog("Please input the text: ");
         	Shape text = new Text(x1, y1, g.getColor(),gWidth,input);
-        	text.Draw(g);
         	list.add(text);
         }
 	}
@@ -87,25 +86,21 @@ public class DrawHandler implements MouseListener,MouseMotionListener{
         if("pic10".equals(command))  
         {  
         	Shape line = new Line(x1, y1, x2, y2,g.getColor(),gWidth);
-        	line.Draw(g);
         	list.add(line);
         }
         //同理选中的是矩形按钮，那么绘制矩形  
         else if("pic12".equals(command)){  
         	Shape rect = new Rect(Math.min(x2, x1),Math.min(y2, y1), Math.abs(x2-x1),Math.abs(y1-y2),g.getColor(),gWidth);
-        	rect.Draw(g);
         	list.add(rect);
         }
         //绘制椭圆  
         else if("pic14".equals(command)){  
         	Shape oval = new Oval(Math.min(x2, x1),Math.min(y2, y1), Math.abs(x2-x1),Math.abs(y1-y2),g.getColor(),gWidth);
-        	oval.Draw(g);
         	list.add(oval);
         } 
         //绘制圆角矩形
         else if("pic15".equals(command)){
         	Shape roundrect = new RoundRect(Math.min(x2, x1),Math.min(y2, y1), Math.abs(x2-x1),Math.abs(y1-y2),40,40,g.getColor(),gWidth);
-        	roundrect.Draw(g);
         	list.add(roundrect);
         }
         //绘制多边形
@@ -113,7 +108,6 @@ public class DrawHandler implements MouseListener,MouseMotionListener{
         	//第一次画直线，设置标志
         	if(flag){
         		Shape line = new Line(x1, y1, x2, y2,g.getColor(),gWidth);
-            	line.Draw(g);
             	list.add(line);
                 flag=false;
               //记录这次鼠标释放的坐标，作为下次绘制直线的起点
@@ -125,7 +119,6 @@ public class DrawHandler implements MouseListener,MouseMotionListener{
         	}
         	else{
         		Shape line = new Line(x3, y3, x2, y2,g.getColor(),gWidth);
-             	line.Draw(g);
              	list.add(line);
         		  //记录上次鼠标释放的坐标
                  x3=x2;
@@ -161,7 +154,6 @@ public class DrawHandler implements MouseListener,MouseMotionListener{
 		int count =e.getClickCount();
 		if(count==2 && "pic13".equals(command)){
 			Shape line = new Line(ox, oy, x2, y2,g.getColor(),gWidth);
-         	line.Draw(g);
          	list.add(line);	
 			flag=true;
 		}
@@ -186,7 +178,6 @@ public class DrawHandler implements MouseListener,MouseMotionListener{
 		if("pic6".equals(command)){
 			
 			Shape line = new Line(x1, y1, x, y,g.getColor(),1);
-         	line.Draw(g);
          	list.add(line);
 			x1=x;
 			y1=y;
@@ -198,7 +189,6 @@ public class DrawHandler implements MouseListener,MouseMotionListener{
 			g.setStroke(s3);
 			
 			Shape line = new Line(x1, y1, x, y,g.getColor(),15);
-         	line.Draw(g);
          	list.add(line);
 			
 			x1=x;
@@ -209,7 +199,6 @@ public class DrawHandler implements MouseListener,MouseMotionListener{
 			g.setStroke(s2);//设置画笔 粗细
 			
 			Shape line = new Line(x1, y1, x, y,g.getColor(),10);
-         	line.Draw(g);
          	list.add(line);
          	
 			x1=x;
@@ -221,10 +210,8 @@ public class DrawHandler implements MouseListener,MouseMotionListener{
 			for (int i = 0; i < 30; i++) {
 				int xp=r.nextInt(31)-15;
 				int yp=r.nextInt(31)-15;
-				//在x，y附件绘制原点
-				
+				//在x，y附件绘制原点				
 				Shape line = new Line(x+xp, y+yp, x+xp, y+yp,g.getColor(),1);
-	         	line.Draw(g);
 	         	list.add(line);
 			}
 			
@@ -233,6 +220,5 @@ public class DrawHandler implements MouseListener,MouseMotionListener{
  
 	public void mouseMoved(MouseEvent e) {
 		
-	} 
-	 
+	} 	 
 }

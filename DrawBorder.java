@@ -11,13 +11,11 @@ import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-//import javax.swing.UIManager;
 import javax.swing.border.BevelBorder;
  
 public class DrawBorder extends JFrame{
@@ -174,26 +172,27 @@ public class DrawBorder extends JFrame{
 	public void addMenu()throws Exception{	
 		JMenuBar bar = new JMenuBar(); //菜单条对象创建		
 		JMenu menu=new JMenu("文件"); //菜单创建
-		
+		JMenu help=new JMenu("帮助");
 		MenuHandler mHandler=new MenuHandler(this); //菜单项监听器创建
 		//创建三个菜单项
 		JMenuItem item0= new JMenuItem("新建");
 		JMenuItem item= new JMenuItem("打开");
 		JMenuItem item1= new JMenuItem("保存");
+		JMenuItem content= new JMenuItem("查看帮助");
 		//给每个菜单项添加监听器
 		item0.addActionListener(mHandler);
 		item.addActionListener(mHandler);
 		item1.addActionListener(mHandler);
+		content.addActionListener(mHandler);
 		//将菜单条添加到窗体上
 		this.setJMenuBar(bar);
 		//将菜单添加到菜单条上
 		bar.add(menu);
+		bar.add(help);
 		//将菜单项添加到菜单上
 		menu.add(item0);
 		menu.add(item);
 		menu.add(item1);
-	}
-	
-
-	
+		help.add(content);
+	}	
 }
